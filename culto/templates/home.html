@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img class="logo" width="100px" src="{% static 'logo-novo.jpg' %}" alt="logo">  
+          <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+        </div>
+          <nav [class.show]="isMenuOpen" class="menu">
+          <a class="rotas" href="/">Home</a>
+          <a class="rotas" href="/quemsomos">Quem Somos</a>
+          <a class="rotas" href="/culto">Culto</a>
+          <!-- <a class="rotas" href="/galeria">Galeria</a> -->
+          <!-- <a class="rotas" href="/testemunho">Testemunhos</a> -->
+          <!-- <a class="rotas" href="/horario">Horarios</a> -->
+          <!-- <a class="rotas" href="/evento">Eventos</a> -->
+          <a class="rotas" href="/contato">Contato</a>    
+          </nav>
+          
+        </header>
+    <main class="fundo">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="fundo" src="{% static 'fundo.jpg' %}" alt="fundo">
+            </div>
+            <div class="carousel-item">
+              <img class="fundo" src="{% static 'capa.jpg' %}" alt="fundo">
+            </div>
+          </div>
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button> -->
+        </div>
+      </main>
+      
+      
+      <aside>
+        {% for mensagem in mensagens %}
+          <div class="container" >
+              <h2 class="text-center">{{mensagem.titulo}}</h2>
+              <p class="versiculo">{{mensagem.descricao}}</p>
+          </div>
+          {% endfor %}
+      </aside>
+      
+      <div class="relogio d-flex flex-column animate__animated animate__fadeIn">
+          <div class="horario">
+              <img width="150px" class="text-center" src="{% static 'relogio.png' %}" alt="relogio" >
+              <h2>NOSSOS HORARIOS</h2>
+                <p>CULTO DA MANHA DOMINGO - 09h</p>
+                <p>CULTO DA NOITE DOMINGO - 18:30h</p>
+                <p>CULTO DE CONSAGRAÇÃO PELA MANHA TERÇA - 08h</p>
+                <p>CULTO DA NOITE TERÇA - 19:30h</p>
+            </div>
+      </div>
+      
+      <div class="d-flex justify-content-center">
+          <div class="pastores fade-in">
+              <div class="card mb-3" style="max-width: 1500px;">
+                  <div class="row g-0">
+                      <div class="col-md-4">
+                          <img src="{% static 'pastores.jpg' %}" class="img-fluid rounded-start" alt="pastores">
+                      </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <h3 class="card-title">Conheça nossos Pastores</h3>
+                              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam minima, aut esse cum similique recusandae optio ullam a ratione delectus, exercitationem fuga laudantium iure asperiores aspernatur magni enim unde ipsam.</p>
+                              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aliquid corporis consequatur sit officia pariatur, exercitationem sed perferendis dolor fugit suscipit ab deleniti autem voluptatum cupiditate totam quasi ut ipsum!</p>
+                              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi deserunt odio hic tempore minima eos, esse eligendi illum neque sint cupiditate culpa, nulla sunt in labore, recusandae ad corporis vel.</p>
+                              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita dicta delectus, rem dolore quia tenetur perspiciatis omnis veritatis repellat eum vero velit provident blanditiis quae necessitatibus aspernatur, nesciunt similique quasi.</p>
+                              <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate error blanditiis sint sunt ab tempora eos fugit expedita suscipit. Dolorum repellat repellendus, expedita laudantium impedit nobis cum maxime provident atque?</p>
+                              <a href="https://www.instagram.com/alebarros1702/">
+                                  <button class="btn btn-dark">
+                                      INSTAGRAM DO PASTOR
+                                  </button>
+                              </a>
+                              <div class="separador"></div>
+                              <a href="https://www.instagram.com/shirleylacerda786/">
+                                  <button class="btn btn-dark">
+                                      INSTAGRAM DA PASTORA
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="container">
+        <h3>Quem crê e for batizado será salvo.</h3>
+        <div class="separador-evento"></div>
+        {% for galeria in galerias %}
+        <div class="container-img">
+          <img class="evento-img" src="{{ galeria.imagem.url }}" alt="batizado01" (click)="expandImage('{{ galeria.imagem.url }}')">      
+        </div>
+        {% endfor %}
+      </div>
+      
+      
+      <footer>
+        <div class="container">
+          <img class="logo" width="200px"  src="{% static 'logo.jpg' %}" alt="logo">  
+          <div class="horario-footer">
+           <h2>NOSSOS HORARIOS</h2>
+             <p>CULTO DA MANHA DOMINGO - 09h</p>
+             <p>CULTO DA NOITE DOMINGO - 18:30h</p>
+             <p>CULTO DE CONSAGRAÇÃO PELA MANHA TERÇA - 08h</p>
+             <p>CULTO DA NOITE TERÇA - 19:30h</p>
+         </div>
+          <div class="endereco">
+            <h2 class="titulo">CONTATO</h2>
+             <p class="text-center">TV. MINEIRA 21 - JARDIM LARANJEIRA, NOVA IGUAÇU - RJ, 26291-075</p>
+             <p class="text-center">(21) 99999-8888</p>
+             <p class="text-center">42.987.654/0001-66</p>
+             <p>
+               <a href="#">
+                 <img class="whatsapp" width="35px" src="{% static 'whatsapp.png' %}" alt="whatsapp">
+               </a>
+               Mande uma mensagem e receba nossas
+               informações.</p>
+         </div>
+         
+       </div>
+     </footer>
+     <div class="copyright text-center " style="background-color: black; color: white; width: 100%; height: 100%; font-size: 12px;" >
+        Copyright © 2024.<br> 
+Todos os direitos reservados a CCRF
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
