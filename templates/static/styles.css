@@ -1,371 +1,185 @@
+/* Estilos Gerais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logo {
+  margin-bottom: 10px;
+  text-align: center;
+  margin-right: 45px;
+  border-radius: 50px;
+}
+
 .fundo {
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-    width: 100%;
-    height: 100vh;
-  }
-  
-  
-  
-  aside {
-    padding-top: 50px;
-  }
-  
-  .fundo {
-    animation: fadeIn 2s ease-in-out forwards;
-  }
-  
-  /* @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-  } */
-  
-  .container {
-    animation: slideIn 1s ease-in-out;
-  }
-  
-  /* @keyframes slideIn {
-    from {
-        transform: translateY(0);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-  } */
-  
-  .horario {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 800;
-    font-size: 16px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  .animate__animated {
-    --animate-duration: 1.5s; /* duração da animação */
-  }
-  
-  .pastores{
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      transform: translateY(0px);
-      opacity: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  width: 100%;
+  height: 100vh;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.horario {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+  font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container {
+  padding: 20px 0;
+  animation: slideIn 1s ease-in-out;
+}
+
+.text-center {
+  text-align: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.img-fluid {
+  padding-top: 15px;
+  width: 100%;
+}
+
+.separador {
+  border: 1px solid black;
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.texto {
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    opacity: 1;
   }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  
-  .fade-in {
-    animation: fadeIn 2s ease-in-out;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .separador {
-    padding: 10px;
+}
+
+/* Header */
+header {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+}
+
+header img.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+header a.rotas {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.5s ease;
+}
+
+header a.rotas:hover {
+  color: rgb(103, 2, 2);
+}
+
+.menu {
+  display: contents;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Footer */
+footer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(16, 16, 16);
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.endereco {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.endereco p {
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .fundo {
+    background-size: contain;
+    height: 200px;
   }
-  
-  .versiculo {
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
-  }
-  
-  
-  
-  .container-img {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 400;
+
+  .container {
+    flex-direction: column;
     align-items: center;
-  }
-  
-  .evento-img {
-    width: 25%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: transform 0.2s; /* smooth zoom */
-  }
-  
-  .separador-evento {
-    border: 1px solid black;
-    width: 20%;
-    margin-bottom: 10px;
-  }
-  
-  .aviso {
-    position: relative;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-  }
-  
-  .modal.show {
-    display: block;
-  }
-  
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-  }
-  
-  .modal-content:hover {
-    transform: scale(1.1); /* Zoom effect */
-  }
-  
-  /* Media Queries */
-  
-  /* Para telas menores que 768px */
-  @media (max-width: 768px) {
-    .fundo {
-      background-size: contain;
-      height: 200px;
-    }
-    
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-    }
-  }
-  
-  /* Para telas menores que 480px */
-  @media (max-width: 480px) {
-    .fundo {
-      background-size: contain;
-      height: 200px;
-    }
-    
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-    }
   }
 
   header {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  header img.logo {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  header .icon {
-    color: white;
-    font-size: 24px;
-    margin: 10px;
-  }
-  
-  header a.rotas {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.5s ease;
-  }
-  
-  .menu {
-    display: contents;
-  }
-  
-  header a.rotas:hover {
-    color: rgb(103, 2, 2);
-  }
-  
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-  
-    .logo-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-  
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-  
-    .menu.show {
-        display: flex;
-    }
-  
-    .menu-toggle {
-        display: block;
-    }
-  
-    header a.rotas {
-        padding: 5px 10px;
-    }
-  
-    .sociais {
-        display: none;
-    }
-  }
-  
-  .horario-footer {
-    text-align: center;
-  }
-  
-  footer {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(16, 16, 16);
-    width: 100%;
-    color: white;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    flex-wrap: wrap;
-  }
-  
-  .endereco {
-    display: flex;
     flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
+    align-items: flex-start;
   }
-  
-  .endereco p {
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 300;
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
   }
-  
-  .sociais {
-    color: white;
+
+  .menu.show {
+    display: flex;
   }
-  
-  .logo {
-    margin-bottom: 10px;
-    text-align: center;
-    margin-right: 45px;
-    border-radius: 50px;
+
+  footer {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .titulo {
-    text-align: center;
+}
+
+@media (max-width: 480px) {
+  .fundo {
+    background-size: contain;
+    height: 200px;
   }
-  
-  .text-center {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 800;
-    font-size: 16px;
-  }
-  
-  .whatsapp {
-    text-align: center;
-    border-radius: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 800;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .logo {
-      margin-left: 40px;
-      margin-top: 30px;
-    }
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .endereco, .horario-footer {
-        padding: 20px 0;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      max-width: 1200px;
-    }
-  }
-  
-  @media (max-width: 1280px) {
-    .container {
-      max-width: 300px;
-    }
-    .logo{
-      margin-top: 20px;
-      margin-left: 35px;
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    .container {
-      max-width: 2000px;
-    }
-  }
+}
+
+

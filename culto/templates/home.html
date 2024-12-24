@@ -9,23 +9,7 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <img class="logo" width="100px" src="{% static 'logo-novo.jpg' %}" alt="logo">  
-          <button class="menu-toggle" (click)="toggleMenu()">☰</button>
-        </div>
-          <nav [class.show]="isMenuOpen" class="menu">
-          <a class="rotas" href="/">Home</a>
-          <a class="rotas" href="/quemsomos">Quem Somos</a>
-          <a class="rotas" href="/culto">Culto</a>
-          <!-- <a class="rotas" href="/galeria">Galeria</a> -->
-          <!-- <a class="rotas" href="/testemunho">Testemunhos</a> -->
-          <!-- <a class="rotas" href="/horario">Horarios</a> -->
-          <!-- <a class="rotas" href="/evento">Eventos</a> -->
-          <a class="rotas" href="/contato">Contato</a>    
-          </nav>
-          
-        </header>
+    {% include 'header.html' %}
     <main class="fundo">
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
           <div class="carousel-inner">
@@ -111,36 +95,8 @@
         {% endfor %}
       </div>
       
+      {% include 'footer.html' %}
       
-      <footer>
-        <div class="container">
-          <img class="logo" width="200px"  src="{% static 'logo.jpg' %}" alt="logo">  
-          <div class="horario-footer">
-           <h2>NOSSOS HORARIOS</h2>
-             <p>CULTO DA MANHA DOMINGO - 09h</p>
-             <p>CULTO DA NOITE DOMINGO - 18:30h</p>
-             <p>CULTO DE CONSAGRAÇÃO PELA MANHA TERÇA - 08h</p>
-             <p>CULTO DA NOITE TERÇA - 19:30h</p>
-         </div>
-          <div class="endereco">
-            <h2 class="titulo">CONTATO</h2>
-             <p class="text-center">TV. MINEIRA 21 - JARDIM LARANJEIRA, NOVA IGUAÇU - RJ, 26291-075</p>
-             <p class="text-center">(21) 99999-8888</p>
-             <p class="text-center">42.987.654/0001-66</p>
-             <p>
-               <a href="#">
-                 <img class="whatsapp" width="35px" src="{% static 'whatsapp.png' %}" alt="whatsapp">
-               </a>
-               Mande uma mensagem e receba nossas
-               informações.</p>
-         </div>
-         
-       </div>
-     </footer>
-     <div class="copyright text-center " style="background-color: black; color: white; width: 100%; height: 100%; font-size: 12px;" >
-        Copyright © 2024.<br> 
-Todos os direitos reservados a CCRF
-</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

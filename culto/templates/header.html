@@ -1,0 +1,28 @@
+{% load static %}
+<header>
+  <div class="logo-container">
+    <!-- Logo -->
+    <img class="logo" width="100px" src="{% static 'logo-novo.jpg' %}" alt="Logo">
+
+    <!-- Botão de Toggle -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+
+  <!-- Navegação -->
+  <nav id="menu" class="menu">
+    <a class="rotas" href="{% url 'home' %}">Home</a>
+    <a class="rotas" href="{% url 'quemsomos' %}">Quem Somos</a>
+    <a class="rotas" href="{% url 'culto' %}">Culto</a>
+    <a class="rotas" href="{% url 'contato' %}">Contato</a>
+  </nav>
+</header>
+
+<!-- Script para Toggle -->
+<script>
+  const toggleButton = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+
+  toggleButton.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
