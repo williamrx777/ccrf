@@ -3,13 +3,13 @@ from .models import *
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    mensagem = Mensagem.objects.all()
+    return render(request, 'home.html', {'mensagens': mensagem})
 
 def culto(request):
     culto = Culto.objects.all()
-    mensagem = Mensagem.objects.all()
     galeria = Galeria.objects.all()
-    return render(request, 'culto.html', {'cultos': culto, 'mensagens': mensagem, 'galerias': galeria})
+    return render(request, 'culto.html', {'cultos': culto, 'galerias': galeria})
 
 def quem_somos(request):
     return render(request, 'quem_somos.html')

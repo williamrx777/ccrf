@@ -13,10 +13,9 @@ class Culto(models.Model):
 class Mensagem(models.Model):
     capitulo = models.CharField(max_length=255, default='')
     versiculo = models.TextField(default='')
-    culto = models.ForeignKey(Culto, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.texto
+        return self.capitulo
 
 class Galeria(models.Model):
     imagem = models.ImageField(upload_to='galeria')
