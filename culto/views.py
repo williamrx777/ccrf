@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'home.html', {'mensagens': mensagem})
 
 def culto(request):
-    culto = Culto.objects.all()
+    culto = Culto.objects.all().order_by('-data')
     return render(request, 'culto.html', {'cultos': culto})
 
 def quem_somos(request):
