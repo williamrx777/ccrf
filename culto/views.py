@@ -8,8 +8,7 @@ def home(request):
 
 def culto(request):
     culto = Culto.objects.all()
-    galeria = Galeria.objects.all()
-    return render(request, 'culto.html', {'cultos': culto, 'galerias': galeria})
+    return render(request, 'culto.html', {'cultos': culto})
 
 def quem_somos(request):
     return render(request, 'quem_somos.html')

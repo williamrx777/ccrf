@@ -7,6 +7,7 @@ class Culto(models.Model):
     data = models.DateField()
     local = models.CharField(max_length=255)
     url = models.CharField(max_length=255)
+    imagem = models.ImageField(upload_to='galeria', default='')
     def __str__(self):
         return self.nome
     
@@ -17,10 +18,5 @@ class Mensagem(models.Model):
     def __str__(self):
         return self.capitulo
 
-class Galeria(models.Model):
-    imagem = models.ImageField(upload_to='galeria')
-    culto = models.ForeignKey(Culto, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.imagem.name
     

@@ -4,4 +4,3 @@ from .models import *
 
 admin.site.register(Culto)
 admin.site.register(Mensagem)
-admin.site.register(Galeria)

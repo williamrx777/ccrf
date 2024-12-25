@@ -15,19 +15,19 @@
        
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 ">
                     {% for culto in cultos %}
+                    <div class="col-md-4 ">
                             <div class="video-wrapper">
                                 <a class="link" href="{{ culto.url }}">
-                                    {% for galeria in galerias %}
-                                        {% if galeria.culto_id == culto.id %}
-                                            <img width="300px" src="{{ galeria.imagem.url }}" alt="Imagem do culto {{ culto.nome }}">
-                                        {% endif %}
-                                    {% endfor %}
+                                  
+                                        
+                                    <img width="300px" src="{{ culto.imagem.url }}" alt="Imagem do culto {{ culto.nome }}">
+                                        
+                           
                                 </a>
                             </div>
-                            {% endfor %}
                         </div>
+                        {% endfor %}
                 </div>
                 
             </div>
