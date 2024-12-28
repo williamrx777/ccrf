@@ -89,12 +89,14 @@
       
       <div class="container">
         <h3>Quem crê e for batizado será salvo.</h3>
-        <div class="separador-evento"></div>
-        {% for galeria in galerias %}
-        <div class="container-img">
-          <img class="evento-img" src="{{ galeria.imagem.url }}" alt="batizado01" (click)="expandImage('{{ galeria.imagem.url }}')">      
+        <div class="separador"></div>
+        <div class="d-flex ">
+          {% for batismo in batismos %}
+          <a href="{{ batismo.imagem.url }}" data-lightbox="mygallery">
+            <img width="350px" class="img-thumbnail" src="{{ batismo.imagem.url }}" alt="batizado">      
+          </a>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
       
       {% include 'footer.html' %}

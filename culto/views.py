@@ -4,7 +4,8 @@ from .models import *
 
 def home(request):
     mensagem = Mensagem.objects.all()
-    return render(request, 'home.html', {'mensagens': mensagem})
+    batismo = Batismo.objects.all().order_by('-data')
+    return render(request, 'home.html', {'mensagens': mensagem, 'batismos': batismo})
 
 def culto(request):
     culto = Culto.objects.all().order_by('-data')
