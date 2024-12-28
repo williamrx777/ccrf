@@ -18,5 +18,12 @@ class Mensagem(models.Model):
     def __str__(self):
         return self.capitulo
 
+class Batismo(models.Model):
+    nome = models.CharField(max_length=255)
+    data = models.DateField()
+    local = models.CharField(max_length=255)
+    imagem = models.ImageField(upload_to='batismo', default='')
 
+    def __str__(self):
+        return self.nome
     
